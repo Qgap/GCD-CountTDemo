@@ -12,6 +12,8 @@
 		4512CF351AF2410D006C3EF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4512CF341AF2410D006C3EF7 /* Images.xcassets */; };
 		4512CF381AF2410D006C3EF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4512CF361AF2410D006C3EF7 /* LaunchScreen.xib */; };
 		4512CF441AF2410E006C3EF7 /* GCD_CountTDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4512CF431AF2410E006C3EF7 /* GCD_CountTDemoTests.m */; };
+		4512CF501AF24126006C3EF7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4512CF4E1AF24126006C3EF7 /* RootViewController.m */; };
+		4512CF511AF24126006C3EF7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4512CF4F1AF24126006C3EF7 /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 		4512CF3D1AF2410E006C3EF7 /* GCD CountTDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GCD CountTDemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4512CF421AF2410E006C3EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4512CF431AF2410E006C3EF7 /* GCD_CountTDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCD_CountTDemoTests.m; sourceTree = "<group>"; };
+		4512CF4D1AF24126006C3EF7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		4512CF4E1AF24126006C3EF7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		4512CF4F1AF24126006C3EF7 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,9 @@
 		4512CF2C1AF2410D006C3EF7 /* GCD CountTDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4512CF4D1AF24126006C3EF7 /* RootViewController.h */,
+				4512CF4E1AF24126006C3EF7 /* RootViewController.m */,
+				4512CF4F1AF24126006C3EF7 /* RootViewController.xib */,
 				4512CF311AF2410D006C3EF7 /* AppDelegate.h */,
 				4512CF321AF2410D006C3EF7 /* AppDelegate.m */,
 				4512CF341AF2410D006C3EF7 /* Images.xcassets */,
@@ -193,6 +201,7 @@
 			files = (
 				4512CF381AF2410D006C3EF7 /* LaunchScreen.xib in Resources */,
 				4512CF351AF2410D006C3EF7 /* Images.xcassets in Resources */,
+				4512CF511AF24126006C3EF7 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +221,7 @@
 			files = (
 				4512CF331AF2410D006C3EF7 /* AppDelegate.m in Sources */,
 				4512CF301AF2410D006C3EF7 /* main.m in Sources */,
+				4512CF501AF24126006C3EF7 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
