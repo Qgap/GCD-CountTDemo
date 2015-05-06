@@ -26,9 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _timeCount = 0;
+ }
    
-}
-
 /**
  *  点击开启定时器，再点停止
  *
@@ -60,7 +59,7 @@
 if (_isCreat){
     if (_isPause == YES) {
         dispatch_resume(timer);
-//        _isPause = !_isPause;
+
     }
     dispatch_source_cancel(timer);
     [_begainBtn setTitle:@"开始" forState:UIControlStateNormal];
