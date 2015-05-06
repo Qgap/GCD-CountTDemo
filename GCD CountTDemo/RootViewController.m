@@ -80,7 +80,7 @@
     dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);
     dispatch_source_set_event_handler(timer, ^{
         int hours = _timeCount / 3600;
-        int minutes = _timeCount / 60;
+        int minutes = (_timeCount - (3600*hours)) / 60;
         int seconds = _timeCount%60;
         NSString *strTime = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",hours,minutes,seconds];
         
