@@ -66,6 +66,7 @@ if (_isCreat){
     _timeLabel.text = @"00:00:00";
     _isStart = NO;
     _timeCount = 0;
+    _isCreat = NO;
     }
 }
 /**
