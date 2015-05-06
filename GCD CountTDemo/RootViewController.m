@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *begainBtn;
 @property (nonatomic) BOOL isStart;
 @property (nonatomic) BOOL isPause;
+@property (nonatomic) BOOL isCreat;
 @property (nonatomic,assign) int timeCount;
 @end
 
@@ -54,9 +55,8 @@
  *  @param sender
  */
 - (IBAction)endCount:(UIButton *)sender {
-//    if ([_begainBtn.titleLabel.text isEqualToString:@"继续"]) {
+if (_isCreat){
     if (_isPause) {
-        
         dispatch_resume(timer);
         _isPause = !_isPause;
     }
@@ -65,8 +65,8 @@
     _timeLabel.text = @"00:00:00";
     _isStart = NO;
     _timeCount = 0;
+    }
 }
-
 /**
  *  <#Description#>
  */
@@ -75,6 +75,7 @@
     if ([_begainBtn.titleLabel.text isEqualToString:@"开始"]) {
         dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, globalQueue);
+        _isCreat = YES;
     }
 //    每秒执行一次
     dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);
