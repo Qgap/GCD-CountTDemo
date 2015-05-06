@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _timeCount = 0;
-    
+   
 }
 
 /**
@@ -37,14 +37,16 @@
 - (IBAction)startCount:(UIButton *)sender {
     if (!_isStart) {
         [self startToCountTime];
+        _isPause = NO;
         [sender setTitle:@"暂停" forState:UIControlStateNormal];
     
     }else
     {
         dispatch_suspend(timer);
-        _isPause = !_isPause;
+        _isPause = YES;
        [sender setTitle:@"继续" forState:UIControlStateNormal];
     }
+    
     _isStart = !_isStart;
     
 }
@@ -56,9 +58,9 @@
  */
 - (IBAction)endCount:(UIButton *)sender {
 if (_isCreat){
-    if (_isPause) {
+    if (_isPause == YES) {
         dispatch_resume(timer);
-        _isPause = !_isPause;
+//        _isPause = !_isPause;
     }
     dispatch_source_cancel(timer);
     [_begainBtn setTitle:@"开始" forState:UIControlStateNormal];
@@ -77,6 +79,7 @@ if (_isCreat){
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, globalQueue);
         _isCreat = YES;
     }
+
 //    每秒执行一次
     dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 1.0*NSEC_PER_SEC, 0);
     dispatch_source_set_event_handler(timer, ^{
@@ -102,14 +105,6 @@ if (_isCreat){
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
